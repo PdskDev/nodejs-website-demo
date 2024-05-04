@@ -5,8 +5,15 @@ var nodemailer = require("nodemailer");
 var port = 3000;
 
 var app = express();
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get("/", function (req, res) {
+  res.render("index");
+});
+
 app.listen(port);
-console.log(`Server is runnug at port ${port}`);
+console.log(`Server is running at port ${port}`);
