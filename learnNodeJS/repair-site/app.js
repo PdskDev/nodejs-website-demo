@@ -16,5 +16,9 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+
 app.listen(port);
 console.log(`Server is running at port ${port}`);
